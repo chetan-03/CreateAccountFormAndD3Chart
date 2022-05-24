@@ -1,38 +1,194 @@
-.App {
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .main__bg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #F7F7F7;
+  padding: 2rem 0;
+}
+
+.main .main__bg .main__bg-img {
+  background-color: #F7F7F7;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main .main__bg .main__bg_desc {
+  margin: 1.5rem 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main .main__bg .main__bg_desc .main__bg_desc-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #656565;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main .main__bg .main__bg_desc .main__bg_desc-txt {
+  font-size: 1rem;
+  color: #656565;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main .main__form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 4rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #919191;
 }
 
-.App-link {
-  color: #61dafb;
+.main .main__form .main__form_title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #656565;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main .main__form .main__form_container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
+
+.main .main__form .main__form_container .main__form_input {
+  margin: .5rem 0 1rem 0;
+  width: 350px;
+  height: 25px;
+  border: 1px solid #E0E0E0;
+  border-radius: .4em;
+  outline-color: #3a86ff;
+}
+
+.main .main__form .main__form_container .main__form_input_status {
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.main .main__form .main__form_container .main__form_input_status:hover .main__form_input_status_error-text {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.main .main__form .main__form_container .error {
+  outline-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.main .main__form .main__form_container .show {
+  right: 15px;
+  opacity: 1;
+  -webkit-transition: right 0.2s;
+  transition: right 0.2s;
+}
+
+.main .main__form .main__form_container .success {
+  outline-color: #5eff6b;
+  border-color: #44c100;
+}
+
+.main .main__form .main__form_container .main__form_input_status_error-text {
+  visibility: hidden;
+  width: 24em;
+  background-color: rgba(0, 0, 0, 0.524);
+  color: #fff;
+  text-align: center;
+  border-radius: .4em;
+  padding: .3em 0;
+  font-size: .7rem;
+  position: absolute;
+  z-index: 1;
+  right: 105%;
+}
+
+.main .main__form .main__form_check-box_label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #313131;
+  padding-left: 30px;
+}
+
+.main .main__form .main__form_check-box_label:hover .main__form_check-box ~ .checkmark {
+  border: 1px solid #3a86ff;
+}
+
+.main .main__form .main__form_check-box_label .main__form_check-box {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.main .main__form .main__form_check-box_label .main__form_check-box:checked ~ .checkmark::after {
+  display: block;
+}
+
+.main .main__form .main__form_check-box_label .main__form_check-box:checked ~ .checkmark {
+  border: 1px solid #3a86ff;
+}
+
+.main .main__form .main__form_check-box_label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: .3em;
+}
+
+.main .main__form .main__form_check-box_label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid #3a86ff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main .main__form .btn {
+  font-weight: 600;
+  font-size: .8rem;
+  padding: .5em 2em;
+  border-radius: .3em;
+}
+
+.main .main__form .main__form_submit {
+  margin: 1.8rem 0;
+  background: #3a86ff;
+  color: #f0f5ff;
+  border: 1px solid #3a86ff;
+}
+
+.BarChart {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+/*# sourceMappingURL=App.css.map */
